@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Financial Trading
+  </title>
+  <style>
+   body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #000;
+            color: #fff;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        .navbar .logo {
+            font-weight: bold;
+        }
+        .navbar .cta {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+        .hero .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: left;
+            padding: 20px;
+        }
+        .hero .content h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .hero .content p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .hero .content .btn {
+            background-color: #f0ad4e;
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .navbar a {
+                margin: 10px 0;
+            }
+            .hero .content h1 {
+                font-size: 32px;
+            }
+            .hero .content p {
+                font-size: 16px;
+            }
+            .hero .content .btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .image-section, .text-section {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            margin: 10px;
+        }
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .text-section {
+            background-color: #e6f0ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .text-section h2 {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        .text-section h1 {
+            font-size: 36px;
+            color: #000;
+            margin: 10px 0;
+        }
+        .text-section p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0;
+        }
+        .text-section a {
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        .text-section a i {
+            margin-left: 5px;
+        }
+                .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        .header p {
+            font-size: 18px;
+            color: #666;
+        }
+        .services {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .service {
+            background-color: #f5f7fa;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .service h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        .service p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .service a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+        }
+        .service a i {
+            margin-left: 5px;
+        }
+        @media (max-width: 768px) {
+            .service {
+                width: 100%;
+            }
+        }
+               .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .header {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .header p {
+            font-size: 16px;
+            color: #666;
+            margin: 0 0 10px 0;
+        }
+        .line {
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .blog-post {
+            flex: 1;
+            min-width: 300px;
+            max-width: 32%;
+            box-sizing: border-box;
+        }
+        .blog-post img {
+            width: 100%;
+            height: auto;
+        }
+        .blog-post-category {
+            color: #007bff;
+            font-size: 14px;
+            margin: 10px 0 5px 0;
+        }
+        .blog-post-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .blog-post {
+                max-width: 100%;
+            }
+        }
+                .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .faq-header {
+            flex: 1 1 40%;
+            max-width: 40%;
+        }
+        .faq-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .faq-header p {
+            font-size: 1.2rem;
+            color: #6B7280;
+        }
+        .faq-content {
+            flex: 1 1 55%;
+            max-width: 55%;
+        }
+        .faq-item {
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .faq-item-header {
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .faq-item-header i {
+            font-size: 1.2rem;
+        }
+        .faq-item-content {
+            padding: 20px;
+            display: none;
+            font-size: 1rem;
+            color: #4B5563;
+        }
+        .faq-item.active .faq-item-content {
+            display: block;
+        }
+        .faq-item.active .faq-item-header i {
+            transform: rotate(180deg);
+        }
+        @media (max-width: 768px) {
+            .faq-header, .faq-content {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+        }
+                .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .text-content {
+            max-width: 50%;
+        }
+        .text-content h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .text-content p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .text-content .divider {
+            width: 50px;
+            height: 2px;
+            background-color: white;
+            margin: 20px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #F5A623;
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn i {
+            margin-left: 10px;
+        }
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .text-content, .image-content {
+                max-width: 100%;
+            }
+            .text-content h1 {
+                font-size: 2em;
+            }
+            .text-content p {
+                font-size: 1em;
+            }
+        }
+                .container {
+            text-align: center;
+            
+        }
+        .newsletter {
+            margin-bottom: 20px;
+        }
+        .newsletter input[type="email"] {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .newsletter button {
+            padding: 10px 20px;
+            background-color: #f0a500;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+        .links, .social-icons {
+            margin-top: 20px;
+        }
+        .links a, .social-icons a {
+            color: black;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .social-icons a {
+            font-size: 20px;
+        }
+         footer {
+            text-align: left;
+            font-size: 16px;
+            color:black;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="navbar">
+   <div class="logo">
+    DAVID WILLIAMS
+    <br/>
+    <span style="font-weight: normal;">
+     Freelance Trader
+    </span>
+   </div>
+   <div class="nav-links">
+    <a href="file:///C:/Users/FAST%20COMPUTER/Desktop/1st%20project.html#">
+     Home
+    </a>
+    <a href="file:///C:/Users/FAST%20COMPUTER/Desktop/project%201%20about%20us%20page.html">
+     About
+    </a>
+    <a href="file:///C:/Users/FAST%20COMPUTER/Desktop/SERVICES%20PAGE.html">
+     Services
+    </a>
+    <a href="file:///C:/Users/FAST%20COMPUTER/Desktop/blog.html">
+     Blog
+    </a>
+    <a href="file:///C:/Users/FAST%20COMPUTER/Desktop/project%201%20contact%20us%20page.html">
+     Contact
+    </a>
+   </div>
+   <a class="cta">
+    Request A Consultation
+   </a>
+  </div>
+  <div class="hero">
+   <img alt="Financial trading screen with charts and graphs" height="900" src="https://storage.googleapis.com/a1aa/image/npJOwaTO6toZPJuOThTTt0RV5ZeGCTCcXfkAIoXsczssyHenA.jpg" width="1600"/>
+   <div class="content">
+    <p>
+     Unlock Your Potential In Trading With David Williams
+    </p>
+    <h1>
+     Expert Guidance And Proven Strategies To Navigate Financial Markets Successfully
+    </h1>
+    <a class="btn">
+     Learn More About Our Strategies
+    </a>
+   </div>
+  </div>
+     <div class="container">
+   <div class="image-section">
+    <img alt="A man in a grey suit sitting on a black leather couch, looking confident and professional." height="400" src="https://storage.googleapis.com/a1aa/image/RGWipiYbsA5mOBNIw17duTtfrEp6bC1UuG08ts8usvmM9DfTA.jpg" width="600"/>
+   </div>
+   <div class="text-section">
+    <h2>
+     About
+    </h2>
+    <h1>
+     At David Williams, we're dedicated to revolutionizing the way traders approach the financial markets.
+    </h1>
+    <p>
+     With years of experience and a passion for helping others succeed, David Williams leads our team of expert traders and analysts.
+    </p>
+    <a>
+     Read More
+  
+    </a>
+   </div>
+  </div>
+       <div class="container">
+        <div class="header">
+            <p>Our Services</p>
+            <h1>What we do</h1>
+        </div>
+        <div class="services">
+            <div class="service">
+                <p>01</p>
+                <h2>Customized Portfolio Management</h2>
+                <p>Our expert team will work closely with you to create a tailored investment strategy designed to achieve your financial goals while minimizing risk and managing your portfolio.</p>
+                <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service">
+                <p>02</p>
+                <h2>Algorithmic Trading Solutions</h2>
+                <p>Our algorithms leverage advanced technology to analyze market data in real-time, enabling us to identify lucrative trading opportunities and execute trades with precision.</p>
+                <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service">
+                <p>03</p>
+                <h2>24/7 Market Analysis and Support</h2>
+                <p>Our team of dedicated analysts monitors global markets around the clock, providing you with timely insights, recommendations, and support whenever you need it.</p>
+                <a href="#">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+      <div class="container">
+   <div class="header">
+    <p>
+     Blog
+    </p>
+    <h1>
+     Insights &amp; Analysis
+    </h1>
+   </div>
+   <div class="line">
+   </div>
+   <div class="blog-posts">
+    <div class="blog-post">
+     <img alt="Stock market graph showing volatility with green and red indicators" height="400" src="https://storage.googleapis.com/a1aa/image/yUZ5c63DfxzjBCKE46EJxWdpPFDEqiOnS1Y9htU1gTlsKEfTA.jpg" width="600"/>
+     <p class="blog-post-category">
+      Market Trends And Analysis
+     </p>
+     <h2 class="blog-post-title">
+      Mastering Market Volatility: Strategies for Thriving in Turbulent Times
+     </h2>
+    </div>
+    <div class="blog-post">
+     <img alt="Person analyzing stock market data on a laptop" height="400" src="https://storage.googleapis.com/a1aa/image/1SowGh0qxg4NKtQffCUpJsXpGmLTQ5bWMg9WEZ4lrOzbVIenA.jpg" width="600"/>
+     <p class="blog-post-category">
+      Risk Management Strategies
+     </p>
+     <h2 class="blog-post-title">
+      The Art of Risk Management: Safeguarding Your Investments in a Volatile Market
+     </h2>
+    </div>
+    <div class="blog-post">
+     <img alt="Notebook with chart patterns and indicators drawn on it" height="400" src="https://storage.googleapis.com/a1aa/image/Oz7TAmcfnjT0Gi06AkSwhDknR89Vni7805Q5zucC52XsKEfTA.jpg" width="600"/>
+     <p class="blog-post-category">
+      Technical Analysis Insights
+     </p>
+     <h2 class="blog-post-title">
+      Demystifying Technical Analysis: A Beginner's Guide to Chart Patterns and Indicators
+     </h2>
+    </div>
+   </div>
+  </div>
+      <div class="container">
+        <div class="faq-header">
+            <h1>F.A.Q.</h1>
+            <p>Find answers to commonly asked questions about our services and trading strategies</p>
+        </div>
+        <div class="faq-content">
+            <div class="faq-item active">
+                <div class="faq-item-header">
+                    <span>What types of trading education programs do you offer?</span>
+                  
+            </div>
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    <span>How do your portfolio management services work?</span>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    <span>How can I access your 24/7 market analysis and support?</span>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-item-header">
+                    <span>What sets your algorithmic trading solutions apart?</span>
+                    <i class="fas fa-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div class="container">
+   <div class="text-content">
+    <h1>
+     Ready to Take Your Trading to the Next Level?
+    </h1>
+    <div class="divider">
+    </div>
+    <p>
+     Don't Wait Any Longer To Unleash Your Trading Potential – Get Started Today And Let Us Guide You Towards Success.
+    </p>
+    <a class="btn" href="#">
+     Get Started
+     <i class="fas fa-arrow-right">
+     </i>
+    </a>
+   </div>
+   <div class="image-content">
+    <img alt="Hand holding a smartphone displaying a trading chart" height="800" src="https://storage.googleapis.com/a1aa/image/P4qfmY2L1dwGfEQFHIeff9ovuhyz2ZXC4InNfwzOW6u7pHifJA.jpg" width="400"/>
+   </div>
+  </div>
+    <div class="container">
+        <div class="newsletter" background-color="black" color="white">
+            <h2>Sign up to our newsletter</h2>
+            <input type="email" placeholder="Email Address">
+            <button>Sign Up</button>
+        </div>
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+        <footer>
+        Copyright © 2024 David Williams
+</footer>
+</body>
+</html>
